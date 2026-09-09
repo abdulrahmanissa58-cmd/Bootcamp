@@ -294,14 +294,11 @@ h2.title{
   background:linear-gradient(90deg, transparent, var(--gold), transparent);
 }
 .title-slide .name{
-  font-size:1.7rem; font-weight:800; color:var(--gold);
+  font-size:2rem; font-weight:800; color:var(--gold);
   font-family:'Cairo',sans-serif;
 }
-.title-slide .role{
-  margin-top:6px; color:var(--muted); font-size:.95rem;
-}
 .title-slide .dua{
-  margin-top:38px; max-width:54ch; font-size:1.08rem; line-height:2; color:#c9cdd4;
+  margin-top:36px; max-width:54ch; font-size:1.08rem; line-height:2; color:#c9cdd4;
   font-style:normal;
 }
 .title-orb{
@@ -320,16 +317,40 @@ h2.title{
 }
 .divider-slide .big-word span{color:var(--gold);}
 .divider-slide .sub{margin-top:18px; color:var(--muted); font-size:1.05rem;}
-.divider-slide .ring{
-  width:120px;height:120px;border-radius:50%; border:1.5px dashed var(--gold-glow);
-  display:flex; align-items:center; justify-content:center; margin-bottom:30px;
-  animation:ringSpin 14s linear infinite;
-}
-.divider-slide .ring .core{
-  width:70px;height:70px;border-radius:50%; background:var(--gold-soft);
-  border:1px solid var(--gold);
-}
 @keyframes ringSpin{ to{transform:rotate(360deg);} }
+
+/* orbiting tool icons around the ring */
+.orbit-wrap{
+  position:relative; width:220px; height:220px; margin:0 auto 30px;
+}
+.orbit-ring{
+  position:absolute; inset:30px; border-radius:50%;
+  border:1.5px dashed var(--gold-glow);
+  animation:ringSpin 16s linear infinite;
+}
+.orbit-core{
+  position:absolute; inset:65px; border-radius:50%;
+  background:var(--gold-soft); border:1px solid var(--gold);
+  box-shadow:0 0 34px var(--gold-soft);
+}
+.orbit-group{
+  position:absolute; inset:0;
+  animation:ringSpin 16s linear infinite;
+}
+.orbit-icon{
+  position:absolute; top:50%; left:50%; width:36px; height:36px; margin:-18px;
+  transform:rotate(var(--ang)) translateY(-98px);
+}
+.orbit-icon .icon-inner{
+  width:100%; height:100%; border-radius:10px;
+  background:var(--surface); border:1px solid var(--line);
+  display:flex; align-items:center; justify-content:center;
+  animation:counterSpin 16s linear infinite;
+}
+@keyframes counterSpin{
+  from{ transform:rotate(calc(-1 * var(--ang))); }
+  to{ transform:rotate(calc(-1 * var(--ang) - 360deg)); }
+}
 
 /* ---------- THANK YOU ---------- */
 .slide.thanks-slide{align-items:center; text-align:center;}
