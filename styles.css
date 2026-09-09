@@ -385,10 +385,61 @@ h2.title{
 .dots span.on{background:var(--gold); width:18px; border-radius:4px;}
 
 @media (max-width:760px){
-  .slide{padding:56px 30px 46px;}
-  .split{flex-direction:column; gap:16px;}
-  .tool-grid{grid-template-columns:repeat(2,1fr);}
-  .qgrid{grid-template-columns:1fr;}
+  html,body{height:100%; overflow:hidden;}
+  .app{
+    width:100vw; height:100vh; height:100dvh;
+    padding:0; align-items:stretch; justify-content:stretch;
+  }
+  .stage-wrap{
+    width:100vw; height:100vh; height:100dvh;
+    aspect-ratio:auto;
+    border-radius:0; border:none;
+  }
+  .chrome-top{top:14px; left:16px; right:16px;}
+  .counter{font-size:.68rem; padding:4px 10px;}
+
+  .slides{inset:0;}
+  .slide{
+    padding:70px 20px 90px;
+    overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
+    justify-content:flex-start;
+    transform:none;
+  }
+  .slide.active{transform:none;}
+
+  h2.title{font-size:1.5rem; max-width:100%;}
+  .lead{font-size:.95rem; margin-top:14px; line-height:1.7;}
+  .muted-line{font-size:.85rem;}
+  .callout{padding:12px 16px; margin-top:18px;}
+  .callout p{font-size:.9rem;}
+
+  .qgrid{grid-template-columns:1fr; gap:8px; margin-top:16px;}
+  .split{flex-direction:column; gap:14px; margin-top:18px;}
+  .chip-row{margin-top:16px; gap:8px;}
+  .chip{font-size:.82rem; padding:7px 12px;}
+
+  .tool-grid{grid-template-columns:repeat(2,1fr); gap:12px; margin-top:20px;}
+  .tool-card{padding:16px 10px;}
+
+  .pipeline{flex-direction:column; align-items:flex-start; gap:16px; margin-top:22px;}
+  .pipe-connector{display:none;}
+
+  .timeline{margin-top:20px;}
+
+  .orbit-wrap{width:160px; height:160px; margin-bottom:20px;}
+  .orbit-ring{inset:20px;}
+  .orbit-core{inset:48px;}
+  .orbit-icon{transform:rotate(var(--ang)) translateY(-70px);}
+  .divider-slide .big-word{font-size:clamp(2.2rem, 10vw, 3rem);}
+
+  .title-slide h1{font-size:clamp(2rem, 8vw, 2.6rem);}
+  .title-slide .name{font-size:1.4rem;}
+  .title-slide .dua{font-size:.92rem; line-height:1.8;}
+  .title-orb{width:220px; height:220px; top:-60px;}
+
+  .thanks-slide h1{font-size:clamp(2rem, 8vw, 2.6rem);}
+
   .nav-btn{display:none;}
-  .pipeline{flex-wrap:wrap;}
+  .dots{bottom:12px;}
 }
