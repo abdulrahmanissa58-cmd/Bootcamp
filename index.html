@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مقدمة في تحليل البيانات</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="app">
+  <div class="stage-wrap" id="stage">
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="chrome-top">
+      <div class="counter"><b id="curNum">01</b> / <span id="totalNum">13</span></div>
+      <div class="counter" id="topicLabel">أهلاً بكم</div>
+    </div>
+
+    <div class="slides" id="slides">
+
+      <!-- 0: TITLE -->
+      <section class="slide title-slide active">
+        <div class="title-orb"></div>
+        <div class="kicker reveal">Data Analyst</div>
+        <h1 class="reveal">أهلاً بكم</h1>
+        <div class="divider reveal"></div>
+        <div class="name reveal">عبدالرحمن عيسى</div>
+        <div class="dua reveal">"اللهم انفعني بما علَّمتني، وعلِّمني ما ينفعني وزدني علمًا"</div>
+      </section>
+
+      <!-- 1: تعريف تحليل البيانات -->
+      <section class="slide">
+        <div class="eyebrow reveal"><span class="num-badge">١</span> التعريف</div>
+        <h2 class="title reveal">تحليل البيانات؟</h2>
+        <p class="lead reveal">
+          ببساطة، تحليل البيانات معناه إننا ناخد أرقام ومعلومات كتير ونحاول نفهم منها إيه اللي بيحصل، وإيه اللي المفروض نعمله بعد كده.
+        </p>
+        <p class="lead reveal">
+          الشركة عندها بيانات عن المبيعات والعملاء والمنتجات والموظفين، والمحلل بييجي يسأل: الأرقام دي بتقولنا إيه؟ وإيه المشكلة المستخبية وراها؟ وإيه القرار الصح اللي ناخده؟
+        </p>
+        <div class="callout reveal">
+          <p>إحنا مش بنطلع أرقام وخلاص — إحنا بنحوّل الأرقام لمعلومة تساعد في اتخاذ قرار.</p>
+        </div>
+      </section>
+
+      <!-- 2: مثال عملي -->
+      <section class="slide">
+        <div class="eyebrow reveal"><span class="num-badge">٢</span> مثال</div>
+        <h2 class="title reveal">من الرقم للسؤال الصح</h2>
+        <p class="lead reveal">شركة بتبيع أونلاين ومبيعاتها قلّت. بدل ما نقول "المبيعات قلت وخلاص"، المحلل يبدأ يسأل:</p>
+        <div class="qgrid reveal">
+          <span>قلت في أنهي شهر؟</span>
+          <span>قلت في أنهي منتجات؟</span>
+          <span>مين العملاء اللي بطلوا يشتروا؟</span>
+          <span>هل المشكلة في السعر؟</span>
+          <span>في منتج معين مبيعاته وقعت؟</span>
+          <span>منطقة معينة المبيعات فيها قلت؟</span>
+        </div>
+        <p class="muted-line reveal" style="margin-top:20px;">وهنا بنبدأ نفهم القصة اللي ورا الأرقام.</p>
+      </section>
+
+      <!-- 3: تطور المجال -->
+      <section class="slide">
+        <div class="eyebrow reveal"><span class="num-badge">٣</span> الأصل</div>
+        <h2 class="title reveal">ازاي المجال ده اتطور؟</h2>
+        <p class="lead reveal">
+          تحليل البيانات مش اختراع حصل في يوم معين. الإنسان من زمان بيجمع أرقام وبيحاول يفهمها — التاجر زمان كان يعرف: بعت كام النهارده؟ كسبت كام؟ إيه أكتر حاجة اتباعت؟
+        </p>
+        <p class="lead reveal">
+          مع الوقت الشركات كبرت والبيانات زادت جدًا، وبقى صعب على الإنسان يفهمها بعينه، فبدأنا نستخدم الإحصاء والكمبيوتر وقواعد البيانات.
+        </p>
+        <div class="closing-line reveal">كل ما البيانات كبرت، احتياجنا لحد يفهمها ويطلع منها معنى كبر.</div>
+      </section>
+
+      <!-- 4: أهمية المجال -->
+      <section class="slide">
+        <div class="eyebrow reveal"><span class="num-badge">٤</span> الأهمية</div>
+        <h2 class="title reveal">مهم لأي شركة كبيرة أو صغيرة</h2>
+        <p class="lead reveal">
+          أي شركة عندها بيانات ممكن تستفيد من تحليل البيانات. الاختلاف بس في حجم البيانات وطريقة استخدامها.
+        </p>
+        <div class="split reveal">
+          <div class="split-col">
+            <h4>شركة صغيرة</h4>
+            <ul>
+              <li>أكتر منتج بيتباع</li>
+              <li>مين أكتر عميل بيشتري</li>
+              <li>إمتى المبيعات بتزيد</li>
+            </ul>
+          </div>
+          <div class="split-col">
+            <h4>شركة كبيرة</h4>
+            <ul>
+              <li>التسويق والمبيعات</li>
+              <li>العملاء والمخزون</li>
+              <li>العمليات والموارد البشرية والتوقعات</li>
+            </ul>
+          </div>
+        </div>
+        <div class="closing-line reveal">السؤال مش "هل الشركة كبيرة؟" — السؤال: هل الشركة عندها بيانات وبتاخد قرارات؟</div>
+      </section>
+
+      <!-- 5: التحول من مجال تاني -->
+      <section class="slide">
+        <div class="eyebrow reveal"><span class="num-badge">٥</span> التحويل المهني</div>
+        <h2 class="title reveal">تقدر تشتغل بيه من أي مجال</h2>
+        <p class="lead reveal">
+          مش لازم تبدأ من الصفر وتسيب المجال اللي أنت فاهمه. فهمك للمجال اللي جاي منه ممكن يبقى ميزة قوية جدًا ليك.
+        </p>
+        <div class="chip-row reveal">
+          <div class="chip"><b>Marketing</b> ← Marketing Analytics</div>
+          <div class="chip"><b>Finance</b> ← Financial Data Analysis</div>
+          <div class="chip"><b>HR</b> ← HR Analytics</div>
+          <div class="chip"><b>Sales</b> ← Sales Analytics</div>
+        </div>
+        <div class="closing-line reveal">مش لازم ترمي خبرتك القديمة — ممكن تضيف عليها مهارة جديدة تخليك أقوى.</div>
+      </section>
+
+      <!-- 6: إثبات المهارة -->
+      <section class="slide">
+        <div class="eyebrow reveal"><span class="num-badge">٦</span> الإثبات</div>
+        <h2 class="title reveal">إزاي تثبت إنك بتعرف تحلل بيانات</h2>
+        <p class="lead reveal">
+          الشركات مش هتوظفك لمجرد إنك خلصت كورس. لازم يكون عندك حاجة تقول: "بص، أنا أقدر أعمل ده" — وده عن طريق مشاريع حقيقية.
+        </p>
+        <div class="chip-row reveal">
+          <div class="chip">تحلل المبيعات</div>
+          <div class="chip">تحدد أفضل المنتجات</div>
+          <div class="chip">تعرف أسباب الانخفاض</div>
+          <div class="chip">تعمل Dashboard</div>
+          <div class="chip">تطلع Recommendations</div>
+        </div>
+        <div class="callout reveal">
+          <p>بدل ما تقول "أنا بعرف Power BI"، قول: "عملت Dashboard حللت فيها مبيعات شركة وطلعت منها Insights."</p>
+        </div>
+      </section>
+
+      <!-- 7: الأدوات -->
+      <section class="slide">
+        <div class="eyebrow reveal"><span class="num-badge">٧</span> الأدوات</div>
+        <h2 class="title reveal">الأدوات المستخدمة في المجال</h2>
+        <div class="tool-grid reveal">
+          <div class="tool-card">
+            <div class="icon" style="background:rgba(35,155,90,.15);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#3fbf78" stroke-width="1.6"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18" stroke="#3fbf78" stroke-width="1.2"/></svg>
+            </div>
+            <h4>Excel</h4>
+            <p>تنظيف البيانات وتحليلها وعمل الحسابات والداشبوردات.</p>
+          </div>
+          <div class="tool-card">
+            <div class="icon" style="background:rgba(76,141,255,.15);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="6" rx="8" ry="3" stroke="#5b9bff" stroke-width="1.6"/><path d="M4 6v12c0 1.66 3.58 3 8 3s8-1.34 8-3V6" stroke="#5b9bff" stroke-width="1.6"/><path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3" stroke="#5b9bff" stroke-width="1.6"/></svg>
+            </div>
+            <h4>SQL</h4>
+            <p>استرجاع البيانات المحفوظة في قواعد البيانات.</p>
+          </div>
+          <div class="tool-card">
+            <div class="icon" style="background:var(--gold-soft);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M5 19V10M11 19V5M17 19v-6" stroke="#f0b429" stroke-width="2.2" stroke-linecap="round"/></svg>
+            </div>
+            <h4>Power BI / Tableau</h4>
+            <p>تحويل البيانات والنتائج لـ Dashboards ومرئيات سهلة الفهم.</p>
+          </div>
+          <div class="tool-card">
+            <div class="icon" style="background:rgba(255,209,102,.15);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6" stroke="#ffd166" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h4>Python</h4>
+            <p>تحليل أعمق، بيانات كبيرة، وأتمتة المهام المتكررة.</p>
+          </div>
+        </div>
+        <p class="muted-line reveal" style="margin-top:22px;">الأداة مش هي المهارة — المهم إنك تعرف تستخدمها عشان تحل مشكلة حقيقية.</p>
+      </section>
+
+      <!-- 8: رحلة البيانات (pipeline) -->
+      <section class="slide">
+        <div class="eyebrow reveal"><span class="num-badge">٨</span> المسار</div>
+        <h2 class="title reveal">رحلة البيانات خطوة بخطوة</h2>
+        <p class="lead reveal">كل أداة من الأدوات اللي بنستخدمها بتساعدنا في جزء من الرحلة دي:</p>
+        <div class="pipeline reveal">
+          <div class="pipe-node"><div class="dot"></div><span>البيانات</span></div>
+          <div class="pipe-connector"></div>
+          <div class="pipe-node"><div class="dot"></div><span>التنظيف</span></div>
+          <div class="pipe-connector"></div>
+          <div class="pipe-node"><div class="dot"></div><span>التحليل</span></div>
+          <div class="pipe-connector"></div>
+          <div class="pipe-node"><div class="dot"></div><span>العرض</span></div>
+          <div class="pipe-connector"></div>
+          <div class="pipe-node"><div class="dot"></div><span>Insight</span></div>
+          <div class="pipe-connector"></div>
+          <div class="pipe-node"><div class="dot"></div><span>القرار</span></div>
+        </div>
+      </section>
+
+      <!-- 9: فهم البيزنس -->
+      <section class="slide">
+        <div class="eyebrow reveal"><span class="num-badge">٩</span> عقلية العمل</div>
+        <h2 class="title reveal">لازم تكون خبير في كل بيزنس؟</h2>
+        <p class="lead reveal">
+          لأ، مش لازم تكون فاهم كل البيزنس في العالم — لكن لازم يكون عندك Business Mindset.
+        </p>
+        <p class="lead reveal">لما تشوف رقم، متبصلوش كرقم وخلاص. اسأل:</p>
+        <div class="qgrid reveal">
+          <span>الرقم ده معناه إيه؟</span>
+          <span>ليه حصل؟</span>
+          <span>هل ده كويس ولا وحش؟</span>
+          <span>إيه القرار اللي ممكن ناخده بناءً عليه؟</span>
+        </div>
+        <div class="closing-line reveal">المطلوب إنك يكون عندك فضول، وتسأل دايمًا "ليه؟" و"إيه اللي نعمله؟"</div>
+      </section>
+
+      <!-- 10: الذكاء الاصطناعي -->
+      <section class="slide">
+        <div class="eyebrow reveal"><span class="num-badge">١٠</span> AI</div>
+        <h2 class="title reveal">الذكاء الاصطناعي هياخد مكاننا؟</h2>
+        <p class="lead reveal">
+          الـ AI هيغيّر طريقة شغل الـ Data Analyst بشكل كبير، لكن مش هيشيل المجال كله.
+        </p>
+        <div class="chip-row reveal">
+          <div class="chip">كتابة SQL</div>
+          <div class="chip">كتابة Python</div>
+          <div class="chip">تنظيف البيانات</div>
+          <div class="chip">عمل Charts</div>
+          <div class="chip">اكتشاف Patterns</div>
+          <div class="chip">تلخيص النتائج</div>
+        </div>
+        <p class="lead reveal" style="margin-top:20px;">لكن لسه فيه أسئلة أهم محتاجة إنسان يجاوب عليها: عايزين نحل أنهي مشكلة؟ البيانات دي صح ولا غلط؟ النتيجة منطقية؟ إيه الـ KPI المهم؟ وإيه القرار اللي الشركة تاخده؟</p>
+        <div class="closing-line reveal">المنافس الحقيقي مش AI ضد Data Analyst — لكن Data Analyst بيستخدم AI ضد Data Analyst مش بيستخدمه.</div>
+      </section>
+
+      <!-- 11: ليه إحنا هنا -->
+      <section class="slide">
+        <div class="eyebrow reveal"><span class="num-badge">١١</span> الهدف</div>
+        <h2 class="title reveal">إحنا هنا النهارده ليه؟</h2>
+        <p class="lead reveal">
+          مش عشان نقول إن المجال ده أسهل حاجة في الدنيا، ولا إن بعد الكورس هتلاقي شغل بكرة.
+        </p>
+        <p class="lead reveal">
+          إحنا هنا عشان نفهم المجال صح من البداية: نفهم يعني إيه Data Analysis، بنستخدمه ليه، الأدوات بتاعتنا إيه، وإزاي نفكر كـ Data Analyst.
+        </p>
+        <div class="closing-line reveal">
+          والأهم من كل ده: إننا نتحول من شخص بيبص على الأرقام... لشخص بيفهم الأرقام، وبيعرف يحكي منها قصة، وياخد منها قرار.
+        </div>
+      </section>
+
+      <!-- 12: تطور الأرقام عبر الزمن -->
+      <section class="slide">
+        <div class="eyebrow reveal"><span class="num-badge">١٢</span> رحلة الزمن</div>
+        <h2 class="title reveal">تطور رؤية البيانات عبر الزمن</h2>
+        <div class="timeline reveal">
+          <div class="tl-item"><div class="tl-marker"></div><div class="tl-text"><b>ورق وسجلات</b><span>أرقام بسيطة مكتوبة يدويًا لتتبع البيع والشراء اليومي.</span></div></div>
+          <div class="tl-item"><div class="tl-marker"></div><div class="tl-text"><b>الآلات والكمبيوتر</b><span>قدرنا نتعامل مع كمية بيانات أكبر بكتير من قدرة العين البشرية.</span></div></div>
+          <div class="tl-item"><div class="tl-marker"></div><div class="tl-text"><b>Excel والجداول الممتدة</b><span>تنظيم البيانات وتحليلها في جداول قابلة للحساب.</span></div></div>
+          <div class="tl-item"><div class="tl-marker"></div><div class="tl-text"><b>SQL و Power BI و Python</b><span>أدوات أقوى تتعامل مع بيانات أضخم بسرعة ووضوح أكبر.</span></div></div>
+        </div>
+        <div class="closing-line reveal">
+          زمان كنا بنبص على الأرقام عشان نعرف "حصل إيه؟"... النهارده بنستخدم البيانات عشان نفهم "ليه حصل؟ وإيه اللي ممكن يحصل بعد كده؟ وإحنا نعمل إيه؟"
+        </div>
+      </section>
+
+      <!-- 13: المعمل (فاصل) -->
+      <section class="slide divider-slide">
+        <div class="orbit-wrap reveal">
+          <div class="orbit-ring"></div>
+          <div class="orbit-core"></div>
+          <div class="orbit-group">
+            <div class="orbit-icon" style="--ang:0deg;">
+              <div class="icon-inner">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#3fbf78" stroke-width="1.8"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18" stroke="#3fbf78" stroke-width="1.3"/></svg>
+              </div>
+            </div>
+            <div class="orbit-icon" style="--ang:90deg;">
+              <div class="icon-inner">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="6" rx="8" ry="3" stroke="#5b9bff" stroke-width="1.8"/><path d="M4 6v12c0 1.66 3.58 3 8 3s8-1.34 8-3V6" stroke="#5b9bff" stroke-width="1.8"/><path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3" stroke="#5b9bff" stroke-width="1.8"/></svg>
+              </div>
+            </div>
+            <div class="orbit-icon" style="--ang:180deg;">
+              <div class="icon-inner">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 19V10M11 19V5M17 19v-6" stroke="#f0b429" stroke-width="2.4" stroke-linecap="round"/></svg>
+              </div>
+            </div>
+            <div class="orbit-icon" style="--ang:270deg;">
+              <div class="icon-inner">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6" stroke="#ffd166" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="big-word reveal">المعمل <span>العملي</span></div>
+        <div class="sub reveal">دلوقتي هنبدأ نطبّق كل اللي فهمناه على أرض الواقع.</div>
+      </section>
+
+      <!-- 14: شكراً (ختام) -->
+      <section class="slide thanks-slide">
+        <h1 class="reveal">شكراً ليكم</h1>
+        <div class="thanks-sub reveal">وشكراً إنك بتحاول تطور من نفسك</div>
+      </section>
+
+    </div><!-- /slides -->
+
+    <button class="nav-btn prev" id="btnPrev" aria-label="السابق">›</button>
+    <button class="nav-btn next" id="btnNext" aria-label="التالي">‹</button>
+    <div class="dots" id="dots"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const slidesEl = document.querySelectorAll('.slide');
+  const total = slidesEl.length;
+  let current = 0;
+
+  const curNum = document.getElementById('curNum');
+  const totalNum = document.getElementById('totalNum');
+  const progressFill = document.getElementById('progressFill');
+  const dotsWrap = document.getElementById('dots');
+  const btnPrev = document.getElementById('btnPrev');
+  const btnNext = document.getElementById('btnNext');
+  const topicLabel = document.getElementById('topicLabel');
+
+  const topics = [
+    'أهلاً بكم','التعريف','مثال عملي','ازاي اتطور المجال','الأهمية',
+    'التحويل المهني','إثبات المهارة','الأدوات','رحلة البيانات',
+    'عقلية العمل','الذكاء الاصطناعي','الهدف من الكورس','رحلة الزمن',
+    'المعمل العملي','شكراً'
+  ];
+
+  totalNum.textContent = String(total).padStart(2,'0');
+
+  for(let i=0;i<total;i++){
+    const d = document.createElement('span');
+    if(i===0) d.classList.add('on');
+    dotsWrap.appendChild(d);
+  }
+  const dotEls = dotsWrap.querySelectorAll('span');
+
+  function toArabicDigits(n){
+    const map = ['٠','١','٢','٣','٤','٥','٦','٧','٨','٩'];
+    return String(n).split('').map(c => map[c] || c).join('');
+  }
+
+  function render(){
+    slidesEl.forEach((s,i)=> s.classList.toggle('active', i===current));
+    curNum.textContent = String(current+1).padStart(2,'0');
+    progressFill.style.width = ((current+1)/total*100)+'%';
+    dotEls.forEach((d,i)=> d.classList.toggle('on', i===current));
+    topicLabel.textContent = topics[current] || '';
+    btnPrev.disabled = current===0;
+    btnNext.disabled = current===total-1;
+  }
+
+  function go(delta){
+    const next = current + delta;
+    if(next<0 || next>=total) return;
+    current = next;
+    render();
+  }
+
+  btnNext.addEventListener('click', ()=>go(1));
+  btnPrev.addEventListener('click', ()=>go(-1));
+
+  document.addEventListener('keydown', (e)=>{
+    if(e.key==='ArrowLeft') go(1);       // RTL: left visually = next
+    if(e.key==='ArrowRight') go(-1);     // RTL: right visually = prev
+    if(e.key===' ') go(1);
+  });
+
+  // swipe support
+  let touchStartX = null;
+  const stage = document.getElementById('stage');
+  stage.addEventListener('touchstart', e=> touchStartX = e.touches[0].clientX);
+  stage.addEventListener('touchend', e=>{
+    if(touchStartX===null) return;
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if(Math.abs(dx) > 40){ dx < 0 ? go(1) : go(-1); }
+    touchStartX = null;
+  });
+
+  render();
+})();
+</script>
+
+</body>
+</html>
